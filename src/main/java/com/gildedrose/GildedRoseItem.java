@@ -40,7 +40,7 @@ public abstract class GildedRoseItem {
         return this.item.sellIn < 0;
     }
 
-    private void checkAndDecreaseQuality() {
+    protected void checkAndDecreaseQuality() {
         if (this.item.quality > 0) {
             this.item.quality = this.item.quality - 1;
         }

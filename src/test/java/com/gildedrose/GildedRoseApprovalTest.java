@@ -138,5 +138,26 @@ public class GildedRoseApprovalTest {
         assertEquals(50, items[0].quality);
     }
 
+    @Test
+    public void conjuredItemQualityDecreasesTwiceAsNormalItem() {
+
+        Item[] items = new Item[]{new Item("Conjured Mana Cake", 2, 5)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        assertEquals(1, items[0].sellIn);
+        assertEquals(3, items[0].quality);
+    }
+
+    @Test
+    public void conjuredItemQualityDecreasesTwiceAsNormalItemAsSellinDateHasPassed() {
+        Item[] items = new Item[]{new Item("Conjured Mana Cake", 0, 8)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+
+        assertEquals(-1, items[0].sellIn);
+        assertEquals(4, items[0].quality);
+    }
+
 
 }

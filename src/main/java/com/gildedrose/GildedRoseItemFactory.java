@@ -8,7 +8,8 @@ public class GildedRoseItemFactory {
     private static final Map<String, Function<Item, GildedRoseItem>> ITEMS = Map.of(
         "Aged Brie", AgedBrieItem::new,
         "Backstage passes to a TAFKAL80ETC concert", BackstageItem::new,
-        "Sulfuras, Hand of Ragnaros", SulfurasItem::new
+        "Sulfuras, Hand of Ragnaros", SulfurasItem::new,
+        "Conjured Mana Cake", ConjuredItem::new
     );
 
     public static GildedRoseItem getUpdater(Item item) {
