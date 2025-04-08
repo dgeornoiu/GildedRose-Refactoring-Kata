@@ -9,12 +9,8 @@ class GildedRose {
 
     public void updateQuality() {
         for (Item item : items) {
-            GildedRoseItem gildedRoseItem;
-            if ("Aged Brie".equals(item.name)) {
-                gildedRoseItem = new AgedBrieItem(item);
-            } else {
-                gildedRoseItem = new GildedRoseItem(item);
-            }
+            var gildedRoseItem = GildedRoseItemFactory.getUpdater(item);
+
             gildedRoseItem.updateItem();
         }
     }
